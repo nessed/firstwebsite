@@ -4,51 +4,52 @@ import img1 from './pic.jpg'
 import grafitti from './png.png'
 import insta from './instagram.svg'
 import ReactPlayer from 'react-player'
+import lmc from './lmc.png'
+import lmclogo from './lmcpng.png'
+import navlogo from './menu.png'
+import yt from './yt.png'
+import twt from './twt.png'
+import ig from './ig.png'
+ 
 
 const navItems = [
   {
-    title: 'Home',
-    href: 'https://google.com'
-  },
-   t
+    title:<img className="h-30 w-20 items-center" src={lmclogo} alt="logo" />,
+    href:'https://google.com'
+   
+  } 
 ]
 
 // main function
 function App() {
   return (
-    // <div className="sticky nav-bar bg-gray-900 py-6 opacity-98">
-    // <a href="https://soundcloud.com/discover">Home</a>
-    // <a href="https://soundcloud.com/discover">News</a>
-    // <a href="#contact">Contact</a>
-    // </div>
     <>
-      <nav class="sticky p-4 bg-black text-white opacity-100">
-        <ul class="flex space-x-4">
-          {navItems.map(item => {
-            return (
-              <li class="cursor-pointer">
-                <a href={item.href}>{item.title}</a>
-              </li>
-            )
-            <img src="/src/logo.svg"></img>
-            
-          })}
-    
-      </nav>
-
-      <div className="flex flex-col items-center">
-      <ReactPlayer url='https://www.youtube.com/watch?v=CUSWtNnpTNQ'/>
-      <ReactPlayer url='https://www.youtube.com/watch?v=CUSWtNnpTNQ'/>
-      <ReactPlayer url='https://www.youtube.com/watch?v=CUSWtNnpTNQ'/>
-      <ReactPlayer url='https://www.youtube.com/watch?v=CUSWtNnpTNQ'/> 
+      <body className='bg-black'>
+      <nav className="fixed rounded-b-lg h-30 opacity-90 w-full justify-between">
+      <ul className="flex space-x-4">
+        {navItems.map(item => (
+          <li className="cursor-pointer">
+            <a href={item.href}>{item.title}</a>
+          </li>
+        ))}
+      </ul>
+      <div className="flex">
+        <a href="www.google.com">
+          <img className="h-10 w-20" src={navlogo} alt="nav"/>
+        </a>
       </div>
-
+    </nav>
+    
+        <div className="flex flex-col items-center">
+          <ReactPlayer className="m-auto" url='https://www.youtube.com/watch?v=CUSWtNnpTNQ'/>
+          <ReactPlayer className="m-auto" url='https://www.youtube.com/watch?v=CUSWtNnpTNQ'/>
+          <ReactPlayer className="m-auto" url='https://www.youtube.com/watch?v=CUSWtNnpTNQ'/>
+          <ReactPlayer className="m-auto" url='https://www.youtube.com/watch?v=CUSWtNnpTNQ'/>
+          <ReactPlayer className="m-auto" url='https://www.youtube.com/watch?v=CUSWtNnpTNQ'/>
+        </div>
+        </body>
     </>
   );
 }
-
-
-
-
 
 export default App;
