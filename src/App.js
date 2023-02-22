@@ -1,55 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
-import img1 from './pic.jpg'
-import grafitti from './png.png'
-import insta from './instagram.svg'
 import ReactPlayer from 'react-player'
-import lmc from './lmc.png'
-import lmclogo from './lmcpng.png'
-import navlogo from './menu.png'
-import yt from './yt.png'
-import twt from './twt.png'
-import ig from './ig.png'
- 
+import Navbar from './navbar';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import art from "./assets/art.jpg"
+import button from "./assets/button.jfif"
+import Carousel from './carousel';
+import hood from "./assets/hood.png"
 
-const navItems = [
-  {
-    title:<img className="h-30 w-20 items-center" src={lmclogo} alt="logo" />,
-    href:'https://google.com'
-   
-  } 
-]
-
-// main function
 function App() {
   return (
     <>
-      <body className='bg-black'>
-      <nav className="fixed rounded-b-lg h-30 opacity-90 w-full justify-between">
-      <ul className="flex space-x-4">
-        {navItems.map(item => (
-          <li className="cursor-pointer">
-            <a href={item.href}>{item.title}</a>
-          </li>
-        ))}
-      </ul>
-      <div className="flex">
-        <a href="www.google.com">
-          <img className="h-10 w-20" src={navlogo} alt="nav"/>
-        </a>
-      </div>
-    </nav>
-    
-        <div className="flex flex-col items-center">
-          <ReactPlayer className="m-auto" url='https://www.youtube.com/watch?v=CUSWtNnpTNQ'/>
-          <ReactPlayer className="m-auto" url='https://www.youtube.com/watch?v=CUSWtNnpTNQ'/>
-          <ReactPlayer className="m-auto" url='https://www.youtube.com/watch?v=CUSWtNnpTNQ'/>
-          <ReactPlayer className="m-auto" url='https://www.youtube.com/watch?v=CUSWtNnpTNQ'/>
-          <ReactPlayer className="m-auto" url='https://www.youtube.com/watch?v=CUSWtNnpTNQ'/>
+   
+      <Navbar />
+      <div className='bg-black space-y-4 p-4 h-full'>
+        <div className="grid grid-cols-1 place-items-center mt-16">
+          <div className='flex flex-justify justify-center font-bold text-white py-5 font-serif underline'>"Sincity"</div>
+          <img className='w-100 h-100 object-contain' src={art} />
         </div>
-        </body>
+        <div className="py-10 flex flex-justify justify-center font-extrabold text-white">
+          <button className="h-8 w-48" style={{ backgroundImage: `url(${art})` }}>Download Now</button>
+        </div>
+        <Carousel />
+        {/*<div className='border-t-2 border-white my-10'></div>
+        <div className='flex justify-center items-center'>
+          <img className='h-60 w-50' src={hood} />
+          <img className='h-60 w-50' src={hood} />
+          <img className='h-60 w-50' src={hood} />
+          <img className='h-60 w-50' src={hood} />
+  </div>*/}      
+      </div>
+    
     </>
   );
 }
 
 export default App;
+
