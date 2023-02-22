@@ -12,6 +12,7 @@ import hood from "./assets/hood.png"
 function App() {
   return (
     <>
+   
       <Navbar />
       <div className='bg-black space-y-4 p-4 h-full'>
         <div className="grid grid-cols-1 place-items-center mt-16">
@@ -30,6 +31,7 @@ function App() {
           <img className='h-60 w-50' src={hood} />
   </div>*/}      
       </div>
+    
     </>
   );
 }
